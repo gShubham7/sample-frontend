@@ -54,25 +54,31 @@ const Register = () => {
         duration: 4000,
         isClosable: true,
       });
-     
-    }else{
+    } else {
       toast({
         title: "Account created.",
         description: "We've created your account for you.",
         status: "success",
         duration: 4000,
         isClosable: true,
-      });       
+      });
       dispatch(registerUser(registerCreds));
     }
-         
   };
 
   if (isRegistered) {
     return <Navigate to="/login" />;
   }
   if (loading) {
-    return <Loading/>;
+    return <Loading />;
+  } else if (error) {
+    return toast({
+      title: "Wrong Credentials",
+      description: "Incorrect Email or Password",
+      status: "error",
+      duration: 4000,
+      isClosable: true,
+    });
   }
   return (
     <HStack w="full">
