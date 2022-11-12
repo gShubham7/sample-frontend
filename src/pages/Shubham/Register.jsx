@@ -56,7 +56,7 @@ const Register = () => {
       });
     } else {
       toast({
-        title: "Account created.",
+        title: "Your account is created",
         description: "We've created your account for you.",
         status: "success",
         duration: 4000,
@@ -168,7 +168,6 @@ const Register = () => {
         display={{ base: "none", md: "block" }}
         bgImage="./Register.gif"
         bgSize="cover"
-        bgPosition="center"
       >
         <Text marginTop={50} maxWidth={{ base: "100%", md: "60%", lg: "60%" }}>
           {/* HOTJAR GUIDES */}

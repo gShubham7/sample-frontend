@@ -23,7 +23,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, Navigate } from "react-router-dom";
 import { login } from "../../redux/auth/auth.actions";
 import { signInWithGoogle } from "./components/firbase";
-import useTimeout from "./components/hooks/useTimeout";
 import Loading from "../Sufiyan/components/Loding";
 
 const Login = () => {
@@ -32,7 +31,6 @@ const Login = () => {
   );
   const dispatch = useDispatch();
   const [loginCreds, setLoginCreds] = useState({});
-  const { ready } = useTimeout(10000);
   const toast = useToast();
 
   const handleChange = (e) => {
@@ -91,7 +89,6 @@ const Login = () => {
     });
     return <Navigate to="/" />;
   }
-
   return (
     <HStack w="full">
       <VStack
@@ -133,14 +130,8 @@ const Login = () => {
                 w={25}
               />
             </IconButton>
-            <Button
-              w="full"
-              bg="blackAlpha.600"
-              color="white"
-              variant="solid"
-              onClick={handleGoogle}
-            >
-              Sign In With Facebook
+            <Button onClick={handleGoogle} w="full" bg="blackAlpha.600" color="white" variant="solid">
+              Sign In With Email
             </Button>
           </ButtonGroup>
         </Stack>
@@ -205,13 +196,12 @@ const Login = () => {
       <VStack
         textAlign="left"
         w="full"
-        padding={100}
+        padding={50}
         height="100vh"
         bg="#ebeef9"
         display={{ base: "none", md: "block" }}
         bgImage="./SignIn.gif"
         bgSize="cover"
-        bgPosition="center"
         color="black"
       >
         <HStack>
@@ -236,7 +226,7 @@ const Login = () => {
           width="full"
           fontSize="15px"
           fontWeight="thin"
-          maxWidth={{ base: "100%", md: "60%", lg: "60%" }}
+          maxWidth={{ base: "100%", md: "40%", lg: "40%" }}
         >
           If you are a new visitor to our website simply register yourself
           here...
@@ -245,8 +235,7 @@ const Login = () => {
         <Link to="/register">
           <Button
             variant="outline"
-            colorScheme="messanger"
-            bgColor="facebook.200"
+            colorScheme="facebook"                   
           >
             Create new account
           </Button>
