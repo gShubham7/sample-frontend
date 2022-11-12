@@ -53,13 +53,6 @@ const Login = () => {
         isClosable: true,
       });
     } else {
-      toast({
-        title: "Logged in successfully",
-        description: "Go and get exciting offers...",
-        status: "success",
-        duration: 4000,
-        isClosable: true,
-      });
       dispatch(login(loginCreds));
     }
   };
@@ -88,6 +81,13 @@ const Login = () => {
     });
   }
   if (isAuth) {
+    toast({
+      title: "Logged in successfully",
+      description: "Go and get exciting offers...",
+      status: "success",
+      duration: 4000,
+      isClosable: true,
+    });
     return <Navigate to="/" />;
   }
 
