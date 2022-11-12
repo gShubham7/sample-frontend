@@ -21,7 +21,7 @@ const AllRoutes = () => {
   return (
     <div>
 
-        <Routes basename="/">
+        <Routes>
 
             <Route path='/' element={<LandingPage />} />
 
