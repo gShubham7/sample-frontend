@@ -72,13 +72,14 @@ const Login = () => {
   if (loading) {
     return <Loading />;
   } else if (error) {
-    return toast({
+    toast({
       title: "Wrong Credentials",
       description: "Incorrect Email or Password",
       status: "error",
       duration: 4000,
       isClosable: true,
     });
+    return <Navigate to="/login" />;
   }
   if (isAuth) {
     toast({
