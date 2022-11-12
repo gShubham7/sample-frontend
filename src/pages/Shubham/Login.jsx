@@ -77,7 +77,7 @@ const Login = () => {
       duration: 4000,
       isClosable: true,
     });
-    return <Navigate to="/login" />;
+    return <Navigate to="/" />;
   }
   if (isAuth) {
     toast({
@@ -130,7 +130,13 @@ const Login = () => {
                 w={25}
               />
             </IconButton>
-            <Button onClick={handleGoogle} w="full" bg="blackAlpha.600" color="white" variant="solid">
+            <Button
+              onClick={handleGoogle}
+              w="full"
+              bg="blackAlpha.600"
+              color="white"
+              variant="solid"
+            >
               Sign In With Email
             </Button>
           </ButtonGroup>
@@ -233,10 +239,7 @@ const Login = () => {
         </Text>
 
         <Link to="/register">
-          <Button
-            variant="outline"
-            colorScheme="facebook"                   
-          >
+          <Button colorScheme="facebook" variant="solid">
             Create new account
           </Button>
         </Link>

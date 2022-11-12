@@ -14,9 +14,11 @@ import AdminDashboard from "../pages/Sufiyan/AdminDashboard";
 import Dashboard from "../pages/Sufiyan/Dashboard";
 
 import Orders from "../pages/Sufiyan/pages/Orders";
-import Payment from "../pages/Sufiyan/Payment";
-import PurchaseSucessfull from "../pages/Sufiyan/PurchaseSucessfull";
+
+import PaymentForm from "../pages/Akanksha/PaymentForm";
+import OrderSuccessfull from "../pages/Akanksha/OrderSuccessfull";
 import SingleProduct from "../pages/Sufiyan/SingleProduct";
+
 import Team from "../pages/Sufiyan/Team";
 import AdminPrivateAuth from "./AdminPrivateAuth";
 import PrivateRoute from "./PrivateRoutes";
@@ -34,7 +36,7 @@ const AllRoutes = () => {
         <Route path="/electronics" element={<Electronic />} />
 
         <Route
-          path="/products/:id"
+          path="/products/:type/:id"
           element={
             <PrivateRoute>
               <SingleProduct />
@@ -64,7 +66,7 @@ const AllRoutes = () => {
           path="/checkout/payment"
           element={
             <PrivateRoute>
-              <Payment />
+              <PaymentForm />
             </PrivateRoute>
           }
         />
@@ -73,7 +75,7 @@ const AllRoutes = () => {
           path="/OrderSuccessfull"
           element={
             <PrivateRoute>
-              <PurchaseSucessfull />
+              <OrderSuccessfull />
             </PrivateRoute>
           }
         />

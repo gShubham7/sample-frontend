@@ -32,7 +32,7 @@ import { CartDataToMatch } from "./data";
 import { useDispatch, useSelector } from "react-redux";
 import { ACTION_ADD_ITEM_TO_CART } from "../../redux/cart/cart.actions";
 
-const SingleProduct = () => {
+const SingleProductMens = () => {
   const { token } = useSelector((store) => store.auth);
 
   const { data: productData } = useSelector((store) => store.product);
@@ -87,41 +87,19 @@ const SingleProduct = () => {
   };
 
   // id is a string so we need to convert it to number
-  const { type, id } = useParams();
-
-  console.log(type);
+  const { id } = useParams();
+  // console.log(typeof(id))
 
   // console.log(cartData)
-  console.log(productData.womens);
+  console.log(productData.mens);
   useEffect(() => {
-    let obj;
-    if (type == "womens") {
-      obj = productData.womens.find((el) => {
-        console.log(el.id == Number(id));
-        if (el.id == Number(id)) {
-          return true;
-        }
-        return false;
-      });
-    }
-    if (type == "mens") {
-      obj = productData.mens.find((el) => {
-        console.log(el.id == Number(id));
-        if (el.id == Number(id)) {
-          return true;
-        }
-        return false;
-      });
-    }
-    if (type == "electronics") {
-      obj = productData.electronics.find((el) => {
-        console.log(el.id == Number(id));
-        if (el.id == Number(id)) {
-          return true;
-        }
-        return false;
-      });
-    }
+    let obj = productData?.mens.find((el) => {
+      console.log(el.id == Number(id));
+      if (el.id == Number(id)) {
+        return true;
+      }
+      return false;
+    });
 
     console.log("I am running from singleProductPage");
 
@@ -415,4 +393,4 @@ const SingleProduct = () => {
   );
 };
 
-export default SingleProduct;
+export default SingleProductMens;
